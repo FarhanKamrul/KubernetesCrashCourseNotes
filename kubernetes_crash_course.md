@@ -1,6 +1,10 @@
 # Introduction to Kubernetes
 
 *Notes taken in reference to: [TechWorld with Nana](https://www.youtube.com/watch?v=s_o8dwzRlu4)*
+I DO NOT OWN THE ORIGINAL CONTENT.
+
+*[Git repo to follow along with demos](https://gitlab.com/nanuchi/k8s-in-1-hour)*
+*[MiniKube installation Guide](https://minikube.sigs.k8s.io/docs/start/)*
 
 The rough notes were made readable using ChatGPT.
 
