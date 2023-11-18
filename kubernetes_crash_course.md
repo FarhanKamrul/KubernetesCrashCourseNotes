@@ -2,6 +2,8 @@
 
 *Notes taken in reference to: [TechWorld with Nana](https://www.youtube.com/watch?v=s_o8dwzRlu4)*
 
+The rough notes were made readable using ChatGPT.
+
 In the dynamic landscape of modern software development, the use of containers has become ubiquitous. Managing hundreds of thousands of containers individually through scripts can be impractical. Kubernetes, an open-source container orchestration framework initially developed by Google, addresses this challenge. It enables the efficient management of applications composed of numerous containers across various deployment environments, including physical machines, virtual machines (VMs), cloud, or hybrid setups.
 
 ## Key Features of Kubernetes:
