@@ -1,9 +1,11 @@
 # Introduction to Kubernetes
 
 *Notes taken in reference to: [TechWorld with Nana](https://www.youtube.com/watch?v=s_o8dwzRlu4)*
+
 I DO NOT OWN THE ORIGINAL CONTENT.
 
 *[Git repo to follow along with demos](https://gitlab.com/nanuchi/k8s-in-1-hour)*
+
 *[MiniKube installation Guide](https://minikube.sigs.k8s.io/docs/start/)*
 
 The rough notes were made readable using ChatGPT.
@@ -82,3 +84,5 @@ To interact with the Minikube cluster, you need to perform various tasks such as
 - It is equipped with preinstalled Docker containers for ease of use.
 - Interaction with the Minikube cluster, including pod creation and configuration, is accomplished through `kubectl`.
 - `kubectl` can be utilized for interacting with any Kubernetes cluster, not limited to Minikube.
+
+Next task: [Deploy a WebApp using MongoDB]()
