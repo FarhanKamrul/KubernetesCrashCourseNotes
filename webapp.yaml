@@ -56,6 +56,7 @@ kind: Service
 metadata:
   name: webapp-service #endpoint which we use to access mongo
 spec:
+  type: NodePort
   #service needs to forward the request to pods that belongs to it. Therefore, the kvp needs to match the pods
   selector:
     app: webapp  
@@ -64,3 +65,4 @@ spec:
     - protocol: TCP
       port: 3000 #could be arbitrary
       targetPort: 3000 #should be the same as containerPort!!!
+      nodePort: 30290 #where to access the service from browser. Find values from Kubernetes documentation
