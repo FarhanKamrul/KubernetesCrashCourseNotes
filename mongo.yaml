@@ -1,0 +1,49 @@
+# configuration file for deployment and service for mongoDB
+apiVersion: apps/v1
+kind: Deployment
+#metadata section
+metadata:
+  name: mongo-deployment
+  #each pod gets a unique name but shares labels. For pods, it is a required field. For deployments, it just is good practice
+
+  labels:
+    app: mongo
+#specification section
+spec:
+  replicas: 1 #DO NOT SCALE DATABASES USING DEPLOYMENT, use STATEFULSET
+  #Kubenetes knows which pod belongs to which deployment using the selector: matchlabels attribute
+  #it is a key value pair, in this case, the kvp is app,nginx
+  selector:
+    matchLabels:
+      app: mongo
+  #template is configuration of the pod within configuration of the deployment
+  #why? because deployment manages pod
+  # has its own metadata and spec sections
+  template:
+    metadata:
+      labels:
+        app: mongo
+    spec:
+      #can have multiple containers per pod
+      #define which image which will be used to create this pod
+      containers:
+      - name: mongoDB
+        image: mongo:5.0
+        ports:
+        - containerPort: 27017 #defined in the dockerhub page for mongoDB
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-service #endpoint which we use to access mongo
+spec:
+  #service needs to forward the request to pods that belongs to it. Therefore, the kvp needs to match the pods
+  selector:
+    app: mongo  
+  #server is accessible to the cluster using this port
+  ports:
+    - protocol: TCP
+      port: 80 #could be arbitrary
+      targetPort: 27017 #should be the same as containerPort!!!
