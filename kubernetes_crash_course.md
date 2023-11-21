@@ -10,6 +10,8 @@ I DO NOT OWN THE ORIGINAL CONTENT.
 
 The rough notes were made readable using ChatGPT.
 
+# *The deployment is left incomplete. The purpose of this project was to get an idea of the Kubernetes architecture, not completely implement it. It will be implemented once I have time*
+
 In the dynamic landscape of modern software development, the use of containers has become ubiquitous. Managing hundreds of thousands of containers individually through scripts can be impractical. Kubernetes, an open-source container orchestration framework initially developed by Google, addresses this challenge. It enables the efficient management of applications composed of numerous containers across various deployment environments, including physical machines, virtual machines (VMs), cloud, or hybrid setups.
 
 ## Key Features of Kubernetes:
