@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mongodb-deployment
+  name: mongodb-deployment #identifier of this document
   labels:
     app: mongodb
 spec:
@@ -23,18 +23,18 @@ spec:
         - name: MONGO_INITDB_ROOT_USERNAME
           valueFrom:
             secretKeyRef:
-              name: mongodb-secret
+              name: mongodb-secret #Referenced from mongodb-secret #just like the name section on this one
               key: mongo-root-username
         - name: MONGO_INITDB_ROOT_PASSWORD
           valueFrom: 
             secretKeyRef:
               name: mongodb-secret
               key: mongo-root-password
----
+--- #signals new document
 apiVersion: v1
 kind: Service
 metadata:
-  name: mongodb-service
+  name: mongodb-service #another identifier
 spec:
   selector:
     app: mongodb
