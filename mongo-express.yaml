@@ -44,9 +44,10 @@ metadata:
 spec:
   selector:
     app: mongo-express
-  type: LoadBalancer  
+  type: LoadBalancer  #assigns service an external IP address and accepts external request
   ports:
     - protocol: TCP
+      # nodePort is the port where the external IP address will be open
       port: 8081
       targetPort: 8081
-      nodePort: 30000
+      nodePort: 30000 #range from 30000-32767
