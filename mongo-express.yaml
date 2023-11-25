@@ -17,11 +17,12 @@ spec:
       containers:
       - name: mongo-express
         image: mongo-express
+        # Further, open the port, specify the environmental variables
         ports:
         - containerPort: 8081
         env:
-        - name: ME_CONFIG_MONGODB_ADMINUSERNAME
-          valueFrom:
+        - name: ME_CONFIG_MONGODB_ADMINUSERNAME # the default environment variable name in mongo express
+          valueFrom: #validate using the secret file
             secretKeyRef:
               name: mongodb-secret
               key: mongo-root-username
@@ -31,8 +32,8 @@ spec:
               name: mongodb-secret
               key: mongo-root-password
         - name: ME_CONFIG_MONGODB_SERVER
-          valueFrom: 
-            configMapKeyRef:
+          valueFrom: # we could put in the server address directly here, or
+            configMapKeyRef: # specify it using a configmap. More useful for having all of the configurations at the same place.
               name: mongodb-configmap
               key: database_url
 ---
